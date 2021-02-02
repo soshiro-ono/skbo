@@ -1,0 +1,12 @@
+<div class="contents row">
+  <% @spots.each do |spot| %>
+    <div class="content_post" style="background-image: url(<%= spot.image %>);">
+      <p><%= spot.text %></p>
+      <span class="name">
+        <%= spot.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<h1>qqq</h1>
