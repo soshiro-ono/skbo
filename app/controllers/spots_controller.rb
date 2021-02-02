@@ -10,11 +10,16 @@ class SpotsController < ApplicationController
   end
 
   def create
-    Spot.create(spot_params)
+    @spot = Spot.create(spot_params)
+    if @spot.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
   def spot_params
-    params.require(:spot).permit(:name, :title, :description,:price)
+    params.require(:spot).permit(:title, :description,:price).merge(user_id: current_user.id)
   end
 end
