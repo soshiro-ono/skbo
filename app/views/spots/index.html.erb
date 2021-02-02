@@ -1,3 +1,6 @@
+<%= render "shared/header" %>
+
+
 <div class="contents row">
   <% @spots.each do |spot| %>
     <div class="content_post" style="background-image: url(<%= spot.image %>);">
@@ -10,3 +13,5 @@
 </div>
 
 <h1>qqq</h1>
+
+<%= render "shared/footer" %>
