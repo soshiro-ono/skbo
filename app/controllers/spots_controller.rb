@@ -18,6 +18,14 @@ class SpotsController < ApplicationController
     end
   end
 
+  def destroy
+    if @spot.destroy
+      redirect_to root_path
+    else
+      redirect_to spot_path(@spot.id)
+    end
+  end
+
   private
   def spot_params
     params.require(:spot).permit(:title, :description,:price).merge(user_id: current_user.id)
