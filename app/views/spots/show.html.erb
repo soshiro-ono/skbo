@@ -1,11 +1,25 @@
 <%= render "shared/header" %>
 
+  <div class="spot-show">
+    <div class="container py-4" id="works">
+      <div class="card-deck">
+        <div class="card">
+          <%= image_tag @spot.image ,class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= @spot.title %></h5>
+            <p class="card-text"><%= @spot.description %></p>
+            <p class="card-text"><%= @spot.price %>円</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <% if user_signed_in? %>
-    <%# <% if @spot.user_id == current_user.id %> %>
+    <% if @spot.user_id == current_user.id %>
       <%= link_to '投稿の編集', edit_spot_path, method: :get, class: "spot-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', spot_path, method: :delete, class:'spot-destroy',data: {confirm: "本当に削除しますか？"}  %>
-    <%# <% end %> %>
+    <% end %>
   <% end %>
 
 <%= render "shared/footer" %>
