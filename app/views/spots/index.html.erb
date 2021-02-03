@@ -3,15 +3,17 @@
 
 <div class="contents row">
   <% @spots.each do |spot| %>
-    <div class="content_post" style="background-image: url(<%= spot.image %>);">
-      <p><%= spot.text %></p>
-      <span class="name">
-        <%= spot.name %>
-      </span>
+    <div class="content_post">
+      <%= link_to spot_path(spot.id) do %>
+        <p><%= spot.description %></p>
+      <% end %>
     </div>
   <% end %>
-</div>
+</div>          
 
-<h1>qqq</h1>
-
+  <div class='song-btn1'>
+    <a href="/spots/new">
+      曲を登録する
+    </a>
+  </div>
 <%= render "shared/footer" %>
