@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+  <div class="contents">
+    <% @spots.each do |spot| %>
+      <%= link_to  spot_path(spot.id) do %>
+        <div class="card-deck">
+          <div class="card" style="width: 18rem;">
+            <div class="image">
+              <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= spot.title %></h5>
+                <h5 class="card-title"><%= spot.adress %></h5>
+                <p class="card-text"><%= spot.price %>円</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>       
+
+
+
+<%= render "shared/footer" %>
