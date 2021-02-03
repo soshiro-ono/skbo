@@ -32,6 +32,14 @@ class SpotsController < ApplicationController
   def edit
   end
 
+  def update
+    if @spot.update(spot_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
 
   private
   def spot_params
