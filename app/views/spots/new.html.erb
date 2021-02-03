@@ -2,6 +2,11 @@
   <div class="song-main">
     <%= form_with(model: @spot, local: true, class: "song-form") do |f| %>
       <%# <%= render 'shared/error_messages', model: f.object %> %>
+      <h2>投稿画像</h2>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"spot-image" %>
+      </div>
+      
       <div class="songs-text">
         <div class="song-title">
           <h2>タイトル入力欄</h2>
