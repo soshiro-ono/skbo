@@ -6,10 +6,12 @@
   <%= link_to spot_path(spot.id) do %>
     <div class="card-deck">
       <div class="card" style="width: 18rem;">
-        <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= spot.title %></h5>
-          <p class="card-text"><%= spot.price %>円</p>
+        <div class="image">
+          <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= spot.title %></h5>
+            <p class="card-text"><%= spot.price %>円</p>
+          </div>
         </div>
       </div>
     </div>
@@ -22,7 +24,11 @@
 
   <div class='song-btn1'>
     <a href="/spots/new">
+      <button type="button" class="btn btn-primary">
       曲を登録する
+      </button>
     </a>
   </div>
+
+
 <%= render "shared/footer" %>
