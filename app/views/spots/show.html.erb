@@ -7,6 +7,7 @@
           <%= image_tag @spot.image ,class:"card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= @spot.title %></h5>
+            <h5 class="card-title"><%= @spot.adress %></h5>
             <p class="card-text"><%= @spot.description %></p>
             <p class="card-text"><%= @spot.price %>円</p>
           </div>
@@ -25,5 +26,6 @@
       </button>
     <% end %>
   <% end %>
+
 
 <%= render "shared/footer" %>

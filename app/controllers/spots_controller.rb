@@ -43,7 +43,7 @@ class SpotsController < ApplicationController
 
   private
   def spot_params
-    params.require(:spot).permit(:title, :description,:price,:image).merge(user_id: current_user.id)
+    params.require(:spot).permit(:title, :description,:price,:image,:adress).merge(user_id: current_user.id)
   end
 
   def set_spot
