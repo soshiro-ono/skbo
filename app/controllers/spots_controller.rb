@@ -28,6 +28,18 @@ class SpotsController < ApplicationController
     end
   end
 
+
+  def edit
+  end
+
+  def update
+    if @spot.update(spot_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
   def spot_params
     params.require(:spot).permit(:title, :description,:price).merge(user_id: current_user.id)
