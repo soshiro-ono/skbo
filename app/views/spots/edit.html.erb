@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
-  <div class="song-main">
+  <div class="form-main">
     <%= form_with(model: @spot, local: true, class: "song-form") do |f| %>
-      <%# <%= render 'shared/error_messages', model: f.object %> %>
+      <%= render 'shared/error_messages', model: f.object %>
       <h2>投稿画像</h2>
         <%= f.file_field :image, id:"spot-image" %>
       
@@ -15,9 +15,9 @@
         <%= f.text_field :adress,class:"form-control", placeholder: "住所を入力して下さい" %>
 
         <h2>価格入力欄</h2>
-        <p><%= f.text_field :price,class:"form-control", placeholder: "金額を半角数字で入力して下さい" %>円</p>
+        <p><%= f.text_field :price,class:"form-control", placeholder: "金額を半角数字のみで入力して下さい" %>円</p>
         
-        <%= f.submit "投稿する" ,class:"song-btn" %>
+        <%= f.submit "投稿する" ,class:"btn btn-primary" %>
     <% end %>
   </div>
 <%= render "shared/footer" %>
