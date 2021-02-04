@@ -1,35 +1,50 @@
 <%= render "shared/header" %>
 
+<div class="d-flex justify-content-center">
+  <div class="p-2">SKBOは練習場所を共有するアプリです。</div>
+  <div class="p-2">みんなでスケボーを練習する場所を共有しましょう。</div>
+
+</div>
+
+<div class="d-flex justify-content-around">
+  <% if user_signed_in? %>
+    <div class='p-2'>
+      <a href="/spots/new">
+        <button type="button" class="btn btn-primary">
+        場所を登録する
+        </button>
+      </a>
+    </div>
+
+    <div class='p-2'>
+      <%= link_to user_path(current_user.id) do %>
+        <button type="button" class="btn btn-primary">
+        マイページへ
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 
 <div class="contents">
-<% @spots.each do |spot| %>
-  <%= link_to spot_path(spot.id) do %>
-    <div class="card-deck">
-      <div class="card" style="width: 18rem;">
-        <div class="image">
-          <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= spot.title %></h5>
-            <h5 class="card-title"><%= spot.adress %></h5>
-            <p class="card-text"><%= spot.price %>円</p>
+  <% @spots.each do |spot| %>
+    <%= link_to spot_path(spot.id) do %>
+      <div class="card-deck">
+        <div class="card" style="width: 18rem;">
+          <div class="image">
+            <%= image_tag spot.image, class: 'card-img-top',  width:"100%", height:"240" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= spot.title %></h5>
+              <h5 class="card-title"><%= spot.adress %></h5>
+              <p class="card-text"><%= spot.price %>円</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>          
-
-
-
-
-  <div class='song-btn1'>
-    <a href="/spots/new">
-      <button type="button" class="btn btn-primary">
-      場所を登録する
-      </button>
-    </a>
-  </div>
 
 
 <%= render "shared/footer" %>
