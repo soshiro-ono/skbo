@@ -3,34 +3,23 @@
     <%= form_with(model: @spot, local: true, class: "song-form") do |f| %>
       <%# <%= render 'shared/error_messages', model: f.object %> %>
       <h2>投稿画像</h2>
-      <div class="click-upload">
         <%= f.file_field :image, id:"spot-image" %>
-      </div>
       
-      <div class="songs-text">
-        <div class="song-title">
-          <h2>施設名入力欄</h2>
-          <%= f.text_field :title, class:"song-text", placeholder: "曲名を入れて下さい" %>
-        </div>
+        <h2>施設名入力欄</h2>
+        <%= f.text_field :title,class:"form-control", placeholder: "施設名を入れて下さい" %>
 
-        <div class = "song-artist">
-          <h2>メモ入力欄</h2>
-          <%= f.text_field :description, class:"song-text", placeholder: "アーティストを入力して下さい" %>
-        </div>
+        <h2>施設情報入力欄</h2>
+        <%= f.text_field :description,class:"form-control", placeholder: "施設の情報を入力して下さい" %>
 
-        <div class = "song-artist">
-          <h2>住所入力欄</h2>
-          <%= f.text_field :adress, class:"song-text", placeholder: "アーティストを入力して下さい" %>
-        </div>
+        <h2>住所入力欄</h2>
+        <%= f.text_field :adress,class:"form-control", placeholder: "住所を入力して下さい" %>
 
-        <div class = "song-artist">
-          <h2>価格入力欄</h2>
-          <%= f.text_field :price, class:"song-text", placeholder: "アーティストを入力して下さい" %>
-        </div>
-        <div class="songs-btn-contents">
-          <%= f.submit "投稿する" ,class:"song-btn" %>
-        </div>
-      </div>
+        <h2>価格入力欄</h2>
+        <p><%= f.text_field :price,class:"form-control", placeholder: "金額を半角数字で入力して下さい" %>円</p>
+        
+        <%= f.submit "投稿する" ,class:"song-btn" %>
     <% end %>
   </div>
 <%= render "shared/footer" %>
+
+
