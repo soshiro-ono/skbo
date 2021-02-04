@@ -1,4 +1,34 @@
 <%= render "shared/header" %>
+
+
+
+<div class="d-flex justify-content-center">
+  <div class="p-2">これは<%= @user.name%>さんの投稿一覧です</div>
+</div>
+
+
+<div class="d-flex justify-content-around">
+  <% if user_signed_in? %>
+    <div class='p-2'>
+      <a href="/spots/new">
+        <button type="button" class="btn btn-primary">
+        場所を登録する
+        </button>
+      </a>
+    </div>
+
+    <div class='p-2'>
+      <%= link_to root_path do %>
+        <button type="button" class="btn btn-primary">
+          みんなの投稿一覧へ
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
   <div class="contents">
     <% @spots.each do |spot| %>
       <%= link_to  spot_path(spot.id) do %>
