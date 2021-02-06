@@ -1,15 +1,23 @@
 class MessagesController < ApplicationController
+
   def index
-    @rooms = Room.all
+    @message = Message.new
+    # @rooms = Room.all
   end
 
   def create
-    message = Message.create(message_params)
-    redirect_to "/rooms/#{message.room.id}"  
+    @messages = Message.create(message_params)
+
+    if @messages.save
+      redirect_to room_path(@messages.room.id)
+    else
+      render :show
+    end
   end
 
   private
   def message_params
-    params.require(:message).permit(:text).merge(user_id: current_user.id, message_id: params[:message_id])
+    params.require(:message).permit(:text).merge(user_id: current_user.id, room_id: params[:room_id])
   end
+
 end

@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   end
   
   root to: 'spots#index'
-  resources :rooms, only: [:new, :create] do
-    resources :messages, only: [:index, :create]
+  resources :rooms do
+    resources :messages, only: :create
   end
 
   devise_for :users
