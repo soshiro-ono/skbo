@@ -11,7 +11,8 @@ class MessagesController < ApplicationController
     if @messages.save
       redirect_to room_path(@messages.room.id)
     else
-      render :show
+      # render :show ではからのバリデーションが掛からずエラーになってしまう。
+      redirect_to room_path(@messages.room.id)
     end
   end
 

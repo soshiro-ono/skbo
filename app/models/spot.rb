@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
   validates :description, presence: true
   validates :adress, presence: true
   validates :image, presence: true
+  validates :price, presence: true
 
   
 end

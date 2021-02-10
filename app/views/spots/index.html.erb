@@ -5,10 +5,6 @@
   <div class="p-2">みんなでスケボーを練習する場所を共有しましょう。</div>
 </div>
 
-    <%= link_to  rooms_path do %>
-    <%# <%= link_to messages_index_path do %> %>
-      <h2 class="page-title">メッセージへ</h2>
-    <% end %>
 
 <div class="d-flex justify-content-around">
   <% if user_signed_in? %>
@@ -21,6 +17,14 @@
     </div>
 
     <div class='p-2'>
+      <%= link_to  rooms_path do %>
+        <button type="button" class="btn btn-primary">
+        チャットルームへ
+        </button>
+      <% end %>
+    </div>
+
+    <div class='p-2'>
       <%= link_to user_path(current_user.id) do %>
         <button type="button" class="btn btn-primary">
         マイページへ
@@ -29,6 +33,7 @@
     </div>
   <% end %>
 </div>
+
 
 
 <div class="contents">
