@@ -3,8 +3,8 @@
 <div class="d-flex justify-content-center">
   <div class="p-2">SKBOは練習場所を共有するアプリです。</div>
   <div class="p-2">みんなでスケボーを練習する場所を共有しましょう。</div>
-
 </div>
+
 
 <div class="d-flex justify-content-around">
   <% if user_signed_in? %>
@@ -17,6 +17,14 @@
     </div>
 
     <div class='p-2'>
+      <%= link_to  rooms_path do %>
+        <button type="button" class="btn btn-primary">
+        チャットルームへ
+        </button>
+      <% end %>
+    </div>
+
+    <div class='p-2'>
       <%= link_to user_path(current_user.id) do %>
         <button type="button" class="btn btn-primary">
         マイページへ
@@ -25,6 +33,7 @@
     </div>
   <% end %>
 </div>
+
 
 
 <div class="contents">
