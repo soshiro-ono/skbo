@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
-  resources :spots
 
+  resources :spots 
+    namespace :admin do
+      resources :spots
+    end
 end
