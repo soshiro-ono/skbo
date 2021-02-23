@@ -2,12 +2,12 @@ class Spot < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  geocoded_by :adress
-  after_validation :geocode, if: :adress_changed?
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   
   validates :title, presence: true
   validates :description, presence: true
-  validates :adress, presence: true
+  validates :address, presence: true
   validates :image, presence: true
   validates :price, presence: true
 

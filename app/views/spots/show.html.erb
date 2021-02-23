@@ -7,7 +7,7 @@
           <%= image_tag @spot.image ,class:"card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= @spot.title %></h5>
-            <h5 class="card-title"><%= @spot.adress %></h5>
+            <h5 class="card-title"><%= @spot.address %></h5>
             <p class="card-text"><%= @spot.description %></p>
             <p class="card-text"><%= @spot.price %>円</p>
           </div>
@@ -82,7 +82,11 @@ function codeAddress(){
   });
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>
+&callback=initMap" async defer></script>
+
+
+
 
 
 <%= render "shared/footer" %>
