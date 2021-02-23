@@ -12,7 +12,6 @@ Geocoder.configure(
   # cache_prefix: 'geocoder:',  # prefix (string) to use for all cache keys
 
   #YOUR_API_KEYにはご自身のAPIキーを記述してください。
-  api_key: ENV['GOOGLE_MAP_API_KEY'],
 
 
   # Exceptions that should not be rescued by default
